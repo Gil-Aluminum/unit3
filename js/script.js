@@ -34,6 +34,7 @@ jobList.addEventListener("change", e => {
   	if(eventValue === dataTheme){
   		option[i].hidden = false;
         option[i].setAttribute("selected", "true");
+        color.selectedIndex = 0;
    	 } 
    	 else{
    	    option[i].hidden = true;
@@ -125,8 +126,7 @@ form.addEventListener("submit", e => {
 //**This function checks that there is a name value. If there is a value, the valid class is assigned and hint is removed.
     function nameCheck(name) {
         const nameEntry = nameObject.value;
-        const nameRegex = /^[A-Za-z]$/;
-            if(nameRegex.test(nameEntry)){
+            if(nameEntry){
                 nameObject.parentElement.className = "valid";
                 nameObject.parentElement.lastElementChild.classList.add("hint");
                 return true
